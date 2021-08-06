@@ -1,0 +1,75 @@
+﻿@model ParticipantsModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>AthleteModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        @using (Html.BeginForm("Create", "Athlete", FormMethod.Post))
+        {
+           
+            <div class="form-group">
+                @Html.LabelFor(x => x.Athletes[0].Name)
+                @Html.TextBoxFor(x => x.Athletes[0].Name)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Athletes[0].Surname)
+                @Html.TextBoxFor(x => x.Athletes[0].Surname)
+            </div>
+                <div class="form-group">
+                    <input type="submit" value="Submit" />
+                </div>
+         
+        
+        }
+        @*<form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Surname" class="control-label"></label>
+                <input asp-for="Surname" class="form-control" />
+                <span asp-validation-for="Surname" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>*@
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+@*@using (Html.BeginForm("Add", "Employee", FormMethod.Post))
+{
+    <div class="container-full" style="background-color:aliceblue">
+        <div class="container">
+            @Html.LabelFor(x => x.FirstName)
+            @Html.TextBoxFor(x => x.FirstName)
+
+            @Html.LabelFor(x => x.LastName)
+            @Html.TextBoxFor(x => x.LastName)
+
+            @Html.LabelFor(x => x.Age)
+            @Html.TextBoxFor(x => x.Age)
+            <input type="submit" value="Submit" />
+        </div>
+    </div>
+}*@
